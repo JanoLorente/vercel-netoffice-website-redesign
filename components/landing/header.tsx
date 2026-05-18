@@ -41,7 +41,12 @@ export function Header() {
             <div className="relative flex items-center">
               <span
                 className="text-3xl font-bold tracking-tight leading-none"
-                style={{ fontFamily: 'var(--font-tw-cen)', color: '#2f78cb' }}
+                style={{
+                  fontFamily: 'var(--font-tw-cen)',
+                  color: '#2f78cb',
+                  fontWeight: 'normal',
+                  fontSize: '45px',
+                }}
               >
                 NetOffice
               </span>

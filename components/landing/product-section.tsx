@@ -108,7 +108,7 @@ export function ProductSection() {
           </p>
         </motion.div>
 
-        {/* Modules grid - Bento style */}
+        {/* Modules grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((module, index) => (
             <motion.div
@@ -117,61 +117,23 @@ export function ProductSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className={`group ${index === 0 || index === 8 ? 'lg:col-span-2' : ''}`}
+              className="group"
             >
               <div className="h-full rounded-2xl bg-card border border-border overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                {/* Image header for featured cards */}
-                {(index === 0 || index === 8) && (
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={module.image}
-                      alt={module.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-primary/90 flex items-center justify-center">
-                          <module.icon className="w-5 h-5 text-primary-foreground" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-foreground">{module.title}</h3>
-                        </div>
-                      </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <module.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xl font-bold text-foreground">{module.stats.value}</div>
+                      <div className="text-xs text-muted-foreground">{module.stats.label}</div>
                     </div>
                   </div>
-                )}
-                
-                <div className="p-6">
-                  {/* Header for non-featured cards */}
-                  {index !== 0 && index !== 8 && (
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <module.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xl font-bold text-foreground">{module.stats.value}</div>
-                        <div className="text-xs text-muted-foreground">{module.stats.label}</div>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {index !== 0 && index !== 8 && (
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{module.title}</h3>
-                  )}
-                  
+
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{module.title}</h3>
+
                   <p className="text-sm text-muted-foreground leading-relaxed">{module.description}</p>
-                  
-                  {/* Stats for featured cards */}
-                  {(index === 0 || index === 8) && (
-                    <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">Rendimiento</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-foreground">{module.stats.value}</span>
-                        <span className="text-xs text-muted-foreground">{module.stats.label}</span>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </motion.div>

@@ -75,15 +75,15 @@ export function Footer() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
-                <span>Parque Tecnologico de Bizkaia, Edificio 700<br />48160 Derio, Bizkaia</span>
+                <span>C/ Pablo Ruiz Picasso 55<br />Zaragoza (España)</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 flex-shrink-0 text-primary" />
-                <span>+34 944 034 680</span>
+                <a href="tel:+34976281611" className="hover:text-foreground transition-colors">+34 976 281 611</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0 text-primary" />
-                <span>info@netoffice.es</span>
+                <a href="mailto:netoffice@netoffice.es" className="hover:text-foreground transition-colors">netoffice@netoffice.es</a>
               </div>
             </div>
           </div>

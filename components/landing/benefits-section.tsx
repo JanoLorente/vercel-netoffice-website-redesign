@@ -110,7 +110,7 @@ export function BenefitsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className={`group ${index === 0 || index === 3 ? 'lg:col-span-2' : ''}`}
+              className={`group ${index === 0 || index === 3 || index === 6 || index === 7 ? 'lg:col-span-2' : ''}`}
             >
               <div className={`h-full p-6 rounded-2xl bg-card border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 ${
                 index === 0 || index === 3 ? 'flex flex-col md:flex-row md:items-center gap-6' : ''
