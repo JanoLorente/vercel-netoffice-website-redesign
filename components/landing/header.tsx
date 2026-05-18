@@ -30,7 +30,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -39,22 +39,22 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="relative flex items-center">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">N</span>
+              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/25">
+                <span className="text-primary-foreground font-bold text-lg">N</span>
               </div>
-              <span className="ml-2 text-xl font-bold text-foreground">
+              <span className="ml-2.5 text-xl font-bold text-foreground">
                 NetOffice
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
               >
                 {item.name}
               </Link>
@@ -62,23 +62,23 @@ export function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <Link
               href="#contacto"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Iniciar sesión
+              Iniciar sesion
             </Link>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
               Solicitar demo
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,27 +92,27 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
+            className="md:hidden bg-background border-b border-border shadow-lg"
           >
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-muted-foreground hover:text-foreground transition-colors"
+                  className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border space-y-3">
+              <div className="pt-4 mt-4 border-t border-border space-y-3">
                 <Link
                   href="#contacto"
-                  className="block text-muted-foreground hover:text-foreground transition-colors"
+                  className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
                 >
-                  Iniciar sesión
+                  Iniciar sesion
                 </Link>
-                <Button className="w-full bg-primary hover:bg-primary/90">
+                <Button className="w-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25">
                   Solicitar demo
                 </Button>
               </div>
