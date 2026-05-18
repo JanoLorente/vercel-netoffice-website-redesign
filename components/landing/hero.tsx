@@ -22,8 +22,8 @@ export function Hero() {
           />
         </video>
         {/* Blue tint overlay */}
-        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/90" />
+        <div className="absolute inset-0 bg-primary/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/60" />
       </div>
 
       {/* Hero gradient overlay */}
