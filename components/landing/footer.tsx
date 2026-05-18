@@ -63,10 +63,19 @@ export function Footer() {
           {/* Brand column */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/25">
-                <span className="text-primary-foreground font-bold text-lg">N</span>
+              <div className="relative flex items-center">
+                <span
+                  className="text-3xl font-bold tracking-tight leading-none"
+                  style={{
+                    fontFamily: 'var(--font-tw-cen)',
+                    color: '#2f78cb',
+                    fontWeight: 'normal',
+                    fontSize: '45px',
+                  }}
+                >
+                  NetOffice
+                </span>
               </div>
-              <span className="text-xl font-bold text-foreground">NetOffice</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
               El ERP mas avanzado para transporte y logistica.
