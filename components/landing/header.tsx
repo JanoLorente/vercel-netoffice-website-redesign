@@ -39,10 +39,10 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="relative flex items-center">
-              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/25">
-                <span className="text-primary-foreground font-bold text-lg">N</span>
-              </div>
-              <span className="ml-2.5 text-xl font-bold text-foreground">
+              <span
+                className="text-3xl font-bold tracking-tight leading-none"
+                style={{ fontFamily: 'var(--font-tw-cen)', color: '#2f78cb' }}
+              >
                 NetOffice
               </span>
             </div>

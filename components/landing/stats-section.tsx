@@ -87,7 +87,7 @@ export function StatsSection() {
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
           style={{
-            background: 'radial-gradient(circle, oklch(0.55 0.22 260 / 0.1) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgb(47 120 203 / 0.1) 0%, transparent 60%)',
           }}
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 8, repeat: Infinity }}
