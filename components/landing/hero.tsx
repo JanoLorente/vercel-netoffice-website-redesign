@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, Sparkles, TrendingUp, Package, Clock } from "lucide-react"
+import { ArrowRight, Play, Sparkles, TrendingUp } from "lucide-react"
 
 export function Hero() {
   return (
@@ -119,14 +119,14 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Dashboard Visual with Charts */}
+          {/* Right: TMS Video Demo */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            {/* Main Dashboard Card */}
+            {/* Main Video Card */}
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-chart-2/10 to-primary/10 rounded-3xl blur-2xl" />
               
@@ -145,63 +145,20 @@ export function Hero() {
                   </div>
                 </div>
                 
-                {/* Dashboard content */}
-                <div className="p-6 bg-gradient-to-b from-card to-muted/20">
-                  {/* KPI Cards */}
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    {[
-                      { icon: TrendingUp, label: "Entregas hoy", value: "1,284", change: "+12%", color: "text-green-600" },
-                      { icon: Package, label: "Flota activa", value: "247", change: "98%", color: "text-primary" },
-                      { icon: Clock, label: "Tiempo medio", value: "2.4h", change: "-8%", color: "text-chart-2" },
-                    ].map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                        className="p-4 rounded-xl bg-card border border-border shadow-sm"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <item.icon className="w-4 h-4 text-muted-foreground" />
-                          <span className={`text-xs font-medium ${item.color}`}>{item.change}</span>
-                        </div>
-                        <div className="text-2xl font-bold text-foreground">{item.value}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{item.label}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  
-                  {/* Chart Area */}
-                  <div className="rounded-xl bg-card border border-border p-4 shadow-sm">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-medium text-foreground">Rendimiento semanal</span>
-                      <span className="text-xs text-muted-foreground">Ultimos 7 dias</span>
-                    </div>
-                    <div className="h-32 flex items-end gap-2">
-                      {[65, 45, 80, 55, 90, 70, 95].map((height, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ height: 0 }}
-                          animate={{ height: `${height}%` }}
-                          transition={{ duration: 0.6, delay: 0.7 + index * 0.08, ease: "easeOut" }}
-                          className="flex-1 rounded-t-md bg-gradient-to-t from-primary to-primary/60 relative group"
-                        >
-                          <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                            {height}%
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                    <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-                      <span>Lun</span>
-                      <span>Mar</span>
-                      <span>Mie</span>
-                      <span>Jue</span>
-                      <span>Vie</span>
-                      <span>Sab</span>
-                      <span>Dom</span>
-                    </div>
-                  </div>
+                {/* TMS Video */}
+                <div className="relative aspect-[16/10] bg-muted">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source
+                      src="https://netoffice.es/video.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
                 </div>
               </div>
             </div>
