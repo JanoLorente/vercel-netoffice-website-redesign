@@ -14,12 +14,12 @@ export function Hero() {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80"
         >
-          <source
-            src="https://netoffice.es/video.mp4"
-            type="video/mp4"
-          />
+          <source src="https://netoffice.es/video.mp4" type="video/mp4" />
+          Tu navegador no soporta video HTML5.
         </video>
         {/* Blue tint overlay */}
         <div className="absolute inset-0 bg-primary/30" />
