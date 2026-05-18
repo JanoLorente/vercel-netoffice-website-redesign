@@ -22,7 +22,7 @@ export function Hero() {
           Tu navegador no soporta video HTML5.
         </video>
         {/* Blue tint overlay */}
-        <div className="absolute inset-0 bg-primary/60" />
+        <div className="absolute inset-0 bg-primary/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/60" />
       </div>
 
